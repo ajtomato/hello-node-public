@@ -1,0 +1,20 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: commemorate-front
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: commemorate-front
+  template:
+    metadata:
+      labels:
+        app: commemorate-front
+    spec:
+      containers:
+      - name: commemorate-front
+        image: registry.cn-beijing.aliyuncs.com/abcpingtaitac/commemorate-front:1.0
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080
