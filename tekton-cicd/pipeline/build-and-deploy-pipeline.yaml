@@ -23,6 +23,8 @@ spec:
     params:
       - name: pathToContext
         value: "${params.pathToContext}"
+      - name: pathToDockerFile
+        value: "src/Dockerfile"
       - name: imageUrl
         value: "${params.imageUrl}"
       - name: imageTag
