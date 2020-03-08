@@ -4,7 +4,7 @@
 FROM registry.cn-hangzhou.aliyuncs.com/knative-sample/golang:1.12 as builder
 
 # Copy local code to the container image.
-WORKDIR /go/src/github.com/knative-sample/helloworld
+WORKDIR /go/src/github.com/ajtomato/hello-node-public
 COPY . .
 
 # Build the command inside the container.
@@ -18,7 +18,7 @@ FROM registry.cn-hangzhou.aliyuncs.com/knative-sample/alpine-sh:3.9
 # RUN apk add --no-cache ca-certificates
 
 # Copy the binary to the production image from the builder stage.
-COPY --from=builder /go/src/github.com/knative-sample/helloworld/helloworld /helloworld
+COPY --from=builder /go/src/github.com/ajtomato/hello-node-public/helloworld /helloworld
 
 # Run the web service on container startup.
 CMD ["/helloworld"]
