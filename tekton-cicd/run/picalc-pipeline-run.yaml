@@ -15,7 +15,7 @@ spec:
     - name: pathToYamlFile
       value: "knative/helloworld-go.yaml"
     - name: imageUrl
-      value: "registry.cn-beijing.aliyuncs.com/abcpingtaitac/commemorate-front"
+      value: "registry.cn-hangzhou.aliyuncs.com/abcpingtaitac/commemorate-front"
     - name: imageTag
       value: "1.0"
   serviceAccount: pipeline-account
