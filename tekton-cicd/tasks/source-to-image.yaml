@@ -25,9 +25,9 @@ spec:
       command:
         - /kaniko/executor
       args:
-        - --dockerfile=/workspace/git-source/${inputs.params.pathToDockerFile}
-        - --destination=${inputs.params.imageUrl}:${inputs.params.imageTag}
-        - --context=/workspace/git-source/${inputs.params.pathToContext}
+        - --dockerfile=/workspace/git-source/$(inputs.params.pathToDockerFile)
+        - --destination=$(inputs.params.imageUrl):$(inputs.params.imageTag)
+        - --context=/workspace/git-source/$(inputs.params.pathToContext)
       env:
       - name: DOCKER_CONFIG
         value: /builder/home/.docker
