@@ -5,10 +5,10 @@ metadata:
   namespace: default
 data:
   "Dockerfile": |-
-    FROM registry.cn-hangzhou.aliyuncs.com/knative-sample/golang:1.12 as builder
-    WORKDIR /go/src/github.com/ajtomato/hello-node-public
+    FROM node:12.16.1-alpine
+    WORKDIR /usr/src/app
     COPY . .
-    RUN CGO_ENABLED=0 GOOS=linux go build -v -o helloworld
-    FROM registry.cn-hangzhou.aliyuncs.com/knative-sample/alpine-sh:3.9
-    COPY --from=builder /go/src/github.com/ajtomato/hello-node-public/helloworld /helloworld
-    CMD ["/helloworld"]
+    RUN npm install
+    RUN npm run build
+    FROM nginx
+    COPY dist/ /usr/share/nginx/html
