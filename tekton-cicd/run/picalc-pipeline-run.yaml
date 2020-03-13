@@ -17,5 +17,5 @@ spec:
     - name: imageUrl
       value: "registry.cn-hangzhou.aliyuncs.com/abcpingtaitac/commemorate-front"
     - name: imageTag
-      value: "1.0"
+      value: "1.1"
   serviceAccount: pipeline-account

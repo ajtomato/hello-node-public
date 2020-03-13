@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: managed-web-app-dockerfile
+  namespace: default
+data:
+  "Dockerfile": |-
+    FROM registry.cn-hangzhou.aliyuncs.com/knative-sample/golang:1.12 as builder
+    WORKDIR /go/src/github.com/ajtomato/hello-node-public
+    COPY . .
+    RUN CGO_ENABLED=0 GOOS=linux go build -v -o helloworld
+    FROM registry.cn-hangzhou.aliyuncs.com/knative-sample/alpine-sh:3.9
+    COPY --from=builder /go/src/github.com/ajtomato/hello-node-public/helloworld /helloworld
+    CMD ["/helloworld"]
