@@ -25,7 +25,7 @@ spec:
       command:
         - /kaniko/executor
       args:
-        - --dockerfile=/workspace/git-source/$(inputs.params.pathToDockerFile)
+        - --dockerfile=/workspace/docker/$(inputs.params.pathToDockerFile)
         - --destination=$(inputs.params.imageUrl):$(inputs.params.imageTag)
         - --context=/workspace/git-source/$(inputs.params.pathToContext)
       env:
@@ -33,7 +33,7 @@ spec:
         value: /builder/home/.docker
       volumeMounts:
         - name: dockerfile-dir
-          mountPath: /workspace/git-source/
+          mountPath: /workspace/docker/
   volumes:
   - name: dockerfile-dir
     configMap:
