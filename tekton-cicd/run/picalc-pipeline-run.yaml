@@ -13,7 +13,7 @@ spec:
     - name: pathToContext
       value: "src"
     - name: pathToYamlFile
-      value: "knative/helloworld-go.yaml"
+      value: "managed-web-app-deployment"
     - name: imageUrl
       value: "registry.cn-hangzhou.aliyuncs.com/abcpingtaitac/commemorate-front"
     - name: imageTag

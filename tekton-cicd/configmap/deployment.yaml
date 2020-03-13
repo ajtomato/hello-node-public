@@ -1,0 +1,29 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: managed-web-app-deployment
+  namespace: default
+data:
+  "deployment.yaml": |-
+    apiVersion: extensions/v1beta1
+    kind: Deployment
+    metadata:
+      name: commemorate-front
+    spec:
+      replicas: 1
+      selector:
+        matchLabels:
+          app: commemorate-front
+      template:
+        metadata:
+          labels:
+            app: commemorate-front
+        spec:
+          containers:
+          - name: commemorate-front
+            image: registry.cn-hangzhou.aliyuncs.com/abcpingtaitac/commemorate-front:1.1
+            imagePullPolicy: Always
+            ports:
+            - containerPort: 8080
+          imagePullSecrets:
+          - name: regcred

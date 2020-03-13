@@ -43,7 +43,3 @@ spec:
         value: "$(params.imageUrl)"
       - name: imageTag
         value: "$(params.imageTag)"
-    resources:
-      inputs:
-        - name: git-source
-          resource: git-source
