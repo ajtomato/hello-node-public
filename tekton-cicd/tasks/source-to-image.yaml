@@ -31,3 +31,10 @@ spec:
       env:
       - name: DOCKER_CONFIG
         value: /builder/home/.docker
+      volumeMounts:
+        - name: dockerfile-dir
+          mountPath: /workspace/git-source/
+  volumes:
+  - name: dockerfile-dir
+    configMap:
+      name: managed-web-app-dockerfile
