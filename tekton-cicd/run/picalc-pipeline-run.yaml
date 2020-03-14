@@ -11,11 +11,11 @@ spec:
         name: tekton-knative-git
   params:
     - name: pathToContext
-      value: "src"
+      value: ""
     - name: pathToYamlFile
       value: "managed-web-app-deployment"
     - name: imageUrl
       value: "registry.cn-hangzhou.aliyuncs.com/abcpingtaitac/commemorate-front"
     - name: imageTag
-      value: "1.1"
+      value: "1.2"
   serviceAccount: pipeline-account

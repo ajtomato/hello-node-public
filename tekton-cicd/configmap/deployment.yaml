@@ -21,9 +21,9 @@ data:
         spec:
           containers:
           - name: commemorate-front
-            image: registry.cn-hangzhou.aliyuncs.com/abcpingtaitac/commemorate-front:1.1
+            image: registry.cn-hangzhou.aliyuncs.com/abcpingtaitac/commemorate-front:1.2
             imagePullPolicy: Always
             ports:
-            - containerPort: 8080
+            - containerPort: 80
           imagePullSecrets:
           - name: regcred
